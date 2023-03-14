@@ -1,0 +1,271 @@
+{
+   "cards": [
+
+       {
+           "name": "flower_one",
+           "number": 1,
+           "src": "../Exports/1x/flower_one.png"
+       },
+       {
+           "name": "flower_two",
+           "number": 2,
+           "src": "../Exports/1x/flower_two.png"
+       },
+       {
+           "name": "flower_three",
+           "number": 3,
+           "src": "../Exports/1x/flower_three.png"
+       },
+       {
+           "name": "flower_four",
+           "number": 4,
+           "src": "../Exports/1x/flower_four.png"
+       },
+       {
+           "name": "flower_five",
+           "number": 5,
+           "src": "../Exports/1x/flower_five.png"
+       },
+       {
+           "name": "flower_six",
+           "number": 6,
+           "src": "../Exports/1x/flower_six.png"
+       },
+       {
+           "name": "flower_seven",
+           "number": 7,
+           "src": "../Exports/1x/flower_seven.png"
+       },
+       {
+           "name": "flower_eight",
+           "number": 8,
+           "src": "../Exports/1x/flower_eight.png"
+       },
+       {
+           "name": "flower_nine",
+           "number": 9,
+           "src": "../Exports/1x/flower_nine.png"
+       },
+       {
+           "name": "flower_ten",
+           "number": 10,
+           "src": "../Exports/1x/flower_ten.png"
+       },
+       {
+           "name": "flower_j",
+           "number": 11,
+           "src": "../Exports/1x/flower_j.png"
+       },
+       {
+           "name": "flower_q",
+           "number": 12,
+           "src": "../Exports/1x/flower_q.png"
+       },
+       {
+           "name": "flower_k",
+           "number": 13,
+           "src": "../Exports/1x/flower_k.png"
+       },
+
+
+
+       {
+           "name": "love_one",
+           "number": 1,
+           "src": "../Exports/1x/love_one.png"
+       },
+       {
+           "name": "love_two",
+           "number": 2,
+           "src": "../Exports/1x/love_two.png"
+       },
+       {
+           "name": "love_three",
+           "number": 3,
+           "src": "../Exports/1x/love_three.png"
+       },
+       {
+           "name": "love_four",
+           "number": 4,
+           "src": "../Exports/1x/love_four.png"
+       },
+       {
+           "name": "love_five",
+           "number": 5,
+           "src": "../Exports/1x/love_five.png"
+       },
+       {
+           "name": "love_six",
+           "number": 6,
+           "src": "../Exports/1x/love_six.png"
+       },
+       {
+           "name": "love_seven",
+           "number": 7,
+           "src": "../Exports/1x/love_seven.png"
+       },
+       {
+           "name": "love_eight",
+           "number": 8,
+           "src": "../Exports/1x/love_eight.png"
+       },
+       {
+           "name": "love_nine",
+           "number": 9,
+           "src": "../Exports/1x/love_nine.png"
+       },
+       {
+           "name": "love_ten",
+           "number": 10,
+           "src": "../Exports/1x/love_ten.png"
+       },
+       {
+           "name": "love_j",
+           "number": 11,
+           "src": "../Exports/1x/love_j.png"
+       },
+       {
+           "name": "love_q",
+           "number": 12,
+           "src": "../Exports/1x/love_q.png"
+       },
+       {
+           "name": "love_k",
+           "number": 13,
+           "src": "../Exports/1x/love_k.png"
+       },
+
+
+       {
+           "name": "spade_one",
+           "number": 1,
+           "src": "../Exports/1x/spade_one.png"
+       },
+       {
+           "name": "spade_two",
+           "number": 2,
+           "src": "../Exports/1x/spade_two.png"
+       },
+       {
+           "name": "spade_three",
+           "number": 3,
+           "src": "../Exports/1x/spade_three.png"
+       },
+       {
+           "name": "spade_four",
+           "number": 4,
+           "src": "../Exports/1x/spade_four.png"
+       },
+       {
+           "name": "spade_five",
+           "number": 5,
+           "src": "../Exports/1x/spade_five.png"
+       },
+       {
+           "name": "spade_six",
+           "number": 6,
+           "src": "../Exports/1x/spade_six.png"
+       },
+       {
+           "name": "spade_seven",
+           "number": 7,
+           "src": "../Exports/1x/spade_seven.png"
+       },
+       {
+           "name": "spade_eight",
+           "number": 8,
+           "src": "../Exports/1x/spade_eight.png"
+       },
+       {
+           "name": "spade_nine",
+           "number": 9, 
+           "src": "../Exports/1x/spade_nine.png"
+       },
+       {
+           "name": "spade_ten",
+           "number": 10,
+           "src": "../Exports/1x/spade_ten.png"
+       },
+       {
+           "name": "spade_j",
+           "number": 11,
+           "src": "../Exports/1x/spade_j.png"
+       },
+       {
+           "name": "spade_q",
+           "number": 12,
+           "src": "../Exports/1x/spade_q.png"
+       },
+       {
+           "name": "spade_k",
+           "number": 13,
+           "src": "../Exports/1x/spade_k.png"
+       },
+
+       {
+           "name": "diamond_one",
+           "number": 1,
+           "src": "../Exports/1x/diamond_one.png"
+       },
+       {
+           "name": "diamond_two",
+           "number": 2,
+           "src": "../Exports/1x/diamond_two.png"
+       },
+       {
+           "name": "diamond_three",
+           "number": 3,
+           "src": "../Exports/1x/diamond_three.png"
+       },
+       {
+           "name": "diamond_four",
+           "number": 4,
+           "src": "../Exports/1x/diamond_four.png"
+       },
+       {
+           "name": "diamond_five",
+           "number": 5,
+           "src": "../Exports/1x/diamond_five.png"
+       },
+       {
+           "name": "diamond_six",
+           "number": 6,
+           "src": "../Exports/1x/diamond_six.png"
+       },
+       {
+           "name": "diamond_seven",
+           "number": 7,
+           "src": "../Exports/1x/diamond_seven.png"
+       },
+       {
+           "name": "diamond_eight",
+           "number": 8,
+           "src": "../Exports/1x/diamond_eight.png"
+       },
+       {
+           "name": "diamond_nine",
+           "number": 9,
+           "src": "../Exports/1x/diamond_nine.png"
+       },
+       {
+           "name": "diamond_ten",
+           "number": 10,
+           "src": "../Exports/1x/diamond_ten.png"
+       },
+       {
+           "name": "diamond_j",
+           "number": 11,
+           "src": "../Exports/1x/diamond_j.png"
+       },
+       {
+           "name": "diamond_q",
+           "number": 12,
+           "src": "../Exports/1x/diamond_q.png"
+       },
+       {
+           "name": "diamond_k",
+           "number": 13,
+           "src": "../Exports/1x/diamond_k.png"
+       }
+   ]
+}
