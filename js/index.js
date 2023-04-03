@@ -1,3 +1,9 @@
+// Screen Orientaion
+
+
+
+
+
 
 var main_stack = []
 var player_stack = []
@@ -6,6 +12,9 @@ var discard_stack = []
 const mainStackCard = document.querySelector('.main-stack-card');
 const playerStack = document.querySelector('.player-stack');
 const discardStack = document.querySelector('.player-discard')
+
+const carddrop = new Audio('./media/carddrop.mp3');
+const shuffling = new Audio('./media/shuffling-cards.mp3');
 
 const getData = async () => {
     let response =  await fetch(
@@ -16,11 +25,16 @@ const getData = async () => {
     main_stack = cards
     console.log(cards)
 }
-
 getData();
 
 window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
+    if (/Mobi/.test(navigator.userAgent)) {
+      // Lock the screen orientation to landscape
+      screen.orientation.lock('landscape')
+        .then(() => console.log('Screen orientation locked to landscape.'))
+        .catch((error) => console.error(`Failed to lock screen orientation: ${error}`));
+    }
 
     for(var i = 0; i < 3; i++ ){
         let randNum = Math.floor(Math.random()*main_stack.length);
@@ -36,13 +50,14 @@ window.addEventListener("load", (event) => {
     }
 
     displayPlayerStack()
+    // shuffling.play()
   });
 
 
   displayPlayerStack = ()=>{
    playerStack.innerHTML = player_stack.map( (card) =>{
       return  `<div class="card-container card">
-               <img src="${card.src}" alt="${card.name}" id="${card.name}" draggable="true" class="card" >   
+               <img src="${card.src}" alt="${card.name}" id="${card.name}" onclick="select(this)" draggable="true" class="card pocker-card" >   
                </div>`
       
    }).join('');
@@ -52,7 +67,7 @@ window.addEventListener("load", (event) => {
 
     console.log('working' + discard_stack)
     discardStack.innerHTML = discard_stack.map((card)=>{
-      return `<img src="${card.src}" alt="${card.name}" id="${card.name}" draggable="true" class="card" >`
+      return `<img src="${card.src}" alt="${card.name}" id="${card.name}"  draggable="true" class="card pocker-card" >`
     })
   }
 
@@ -73,117 +88,76 @@ window.addEventListener("load", (event) => {
    displayPlayerStack()
 
    const hasWon = checkArray(player_stack)
-   if(   hasWon.hasAdjacentNumbers === true && hasWon.hasIdenticalNumbers === true ){
-    alert("You've Won!!! refresh the broswer.")
+   if( hasWon){
+     alert("You've Won!!! refresh the broswer.")
    }
 })
 
 
-// const card = document.querySelectorAll(".card");
-playerStack.addEventListener("dragstart", (e)=>{
-  console.log(e.target.dataTransfer)
-  if(e.target.classList.contains('card') && player_stack.length === 4){
-   dragStart(e)
-  }
-})
+let currentCard = null;
 
-discardStack.addEventListener('dragenter', dragEnter)
-discardStack.addEventListener('dragover', dragOver);
-discardStack.addEventListener('dragleave', dragLeave);
-discardStack.addEventListener('drop', drop);
-function dragStart (e){
-   console.log('dragstart')
-   
-   e.dataTransfer.setData('text/plain', e.target.id);
-    setTimeout(() => {
-        e.target.classList.add('hide');
-    }, 0);
- }
+function select(card){
 
- function dragEnter(e) {
-   e.preventDefault();
-   e.target.classList.add('drag-over');
-}
-
-function dragOver(e) {
-   e.preventDefault();
-   e.target.classList.add('drag-over');
-}
-
-function dragLeave(e) {
-   e.target.classList.remove('drag-over');
-}
-
-
- function drop(e) {
-   e.target.classList.remove('drag-over');
-
-   // get the draggable element
-   const id = e.dataTransfer.getData('text/plain');
-
-    const discarded_card = player_stack.filter(card => card.name === id)
-    if(discarded_card !== 0){
-      discard_stack.push(...discarded_card)
+  if(player_stack.length === 4){
+    if (card == currentCard) {
+      const id = card.id;
+      const discarded_card = player_stack.filter(card => card.name === id)
+      if(discarded_card !== 0){
+        discard_stack.push(...discarded_card)
+      }
+      player_stack = player_stack.filter(card=> card.name !== id)
+      displayDiscardStack()
+      displayPlayerStack()
+      carddrop.play();
+      return;
     }
-
-    player_stack = player_stack.filter(card=> card.name !== id)
-
-    displayDiscardStack()
-    displayPlayerStack()
-
-  //  const draggable = document.getElementById(id);
-  //  // add it to the drop target
-  //  e.target.appendChild(draggable);
-
-  //  // display the draggable element
-  //  draggable.classList.remove('hide');
+  
+    // Deselect the current button (if any)
+    if (currentCard) {
+      currentCard.classList.remove("selected-card");
+    }
+  
+    // Select the new button
+    card.classList.add("selected-card");
+    currentCard = card;
+    carddrop.play();
+    
+  }
 }
-
-
-
-
-
 
 
 function checkArray(arr) {
-   let hasIdenticalNumbers = false;
-   let hasAdjacentNumbers = false;
- 
-   for (let i = 0; i < arr.length; i++) {
-     const currentItem = arr[i];
-     const currentItemNumber = currentItem.number;
-
-     // Check for identical numbers
-     for (let j = i + 1; j < arr.length; j++) {
-       const otherItem = arr[j];
-       const otherItemNumber = otherItem.number;
- 
-       if (currentItemNumber === otherItemNumber) {
-         hasIdenticalNumbers = true;
-         break;
-       }
-     }
- 
-     // Check for adjacent numbers
-     for (let j = i + 1; j < arr.length; j++) {
-       const otherItem = arr[j];
-       const otherItemNumber = otherItem.number;
- 
-       if (currentItemNumber === otherItemNumber - 1 || currentItemNumber === otherItemNumber + 1) {
-         hasAdjacentNumbers = true;
-         break;
-       }
-     }
- 
-     if (hasIdenticalNumbers && hasAdjacentNumbers) {
-       // We found both conditions, so we can stop looping
-       break;
-     }
-   }
-  //  console.log({ hasIdenticalNumbers, hasAdjacentNumbers });
- 
-   return { hasIdenticalNumbers, hasAdjacentNumbers };
- }
+  let identicalNumbers = false;
+  let adjacentNumbers = false;
+  
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i].number) {
+      // Check for identical numbers
+      for(let j = i + 1; j < arr.length; j++) {
+        if(arr[i].number === arr[j].number) {
+          identicalNumbers = true;
+          break;
+        }
+      }
+      
+      // Check for adjacent numbers
+      for(let j = i + 1; j < arr.length; j++) {
+        if(arr[i].number + 1 === arr[j].number && arr[i].number !== arr[j].number) {
+          adjacentNumbers = true;
+          break;
+        }
+      }
+    }
+    
+    // If both conditions are true, break out of the loop and return true
+    if(identicalNumbers && adjacentNumbers) {
+      return true;
+    }
+  }
+  
+  // If the loop completes without finding both conditions, return false
+  return false;
+}
  
 
 

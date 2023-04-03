@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocker Game</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/index.js"></script>
+</head>
+<body>
+    <main id="gameBoard">
+        <div class="container">
+            <div class="game-grid">
+                <div class="grid-item">
+                    <div class="opponents">
+                        <div class="opponent">
+                            <div class="opponent-background">
+                                <div class="image-container">
+                                    <img src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=470&q=80" alt="">
+                                </div>
+                            </div>
+                            <div class="turn-switch">
+                                <div class="light"></div>
+                                <div class="opponet-turn">
+                                    Diana's Turn
+                                </div>
+                            </div>
+                            <div class="opponent-details">
+                                <div class="opponent-image">
+                                    <div class="image-container">
+                                        <img src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=470&q=80" alt="">
+                                    </div>
+                                </div>
+                                <div class="opponent-name">Diana</div>
+                            </div>
+                            <div class="decor-cards">
+                                <!-- <div class="image-container"> -->
+                                    <img src="images/decor.png" alt="">
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-info">
+
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="player-board">
+                        <div class="discard-board">
+                            <div class="player-discard"></div>
+                        </div>
+                        <div class="stacks">
+                                <div class="main-stack">
+                                    <div class="main-stack-card">
+                                        <img src="images/card back red.png" alt="card back" class="pocker-card">
+                                        <img src="images/card back red.png" alt="card back" class="pocker-card">
+                                        <img src="images/card back red.png" alt="card back" class="pocker-card">
+                                    </div>
+                                </div>
+                            <div id="playerStack">
+                                <div class="player-stack"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
