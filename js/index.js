@@ -28,13 +28,6 @@ const getData = async () => {
 getData();
 
 window.addEventListener("load", (event) => {
-    console.log("page is fully loaded");
-    if (/Mobi/.test(navigator.userAgent)) {
-      // Lock the screen orientation to landscape
-      screen.orientation.lock('landscape')
-        .then(() => console.log('Screen orientation locked to landscape.'))
-        .catch((error) => console.error(`Failed to lock screen orientation: ${error}`));
-    }
 
     for(var i = 0; i < 3; i++ ){
         let randNum = Math.floor(Math.random()*main_stack.length);
@@ -160,6 +153,27 @@ function checkArray(arr) {
 }
  
 
+
+var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
 
 
 
