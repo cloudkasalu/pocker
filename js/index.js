@@ -27,13 +27,29 @@ const getData = async () => {
 }
 getData();
 
+const lockScreen = ()=>{
+  const oppositeOrientation = screen.orientation.type.startsWith("portrait")
+  ? "landscape"
+  : "portrait";
+screen.orientation
+  .lock(oppositeOrientation)
+  .then(() => {
+    log.textContent = `Locked to ${oppositeOrientation}\n`;
+  })
+  .catch((error) => {
+    log.textContent += `${error}\n`;
+  });
+}
+
+lockScreen()
+
 window.addEventListener("load", (event) => {
 
     for(var i = 0; i < 3; i++ ){
         let randNum = Math.floor(Math.random()*main_stack.length);
-        let randCard = main_stack.filter(card => card.name === main_stack[randNum].name)
+        let randCard = main_stack.filter(card => card.name === main_stack[randNum].name);
 
-        main_stack = main_stack.filter(card => card.name !== main_stack[randNum].name)
+        main_stack = main_stack.filter(card => card.name !== main_stack[randNum].name);
         player_stack = player_stack.concat(randCard)
 
       //   console.log( "player")
@@ -41,6 +57,8 @@ window.addEventListener("load", (event) => {
       //   console.log("main")
       //   console.log(main_stack)
     }
+
+
 
     displayPlayerStack()
     // shuffling.play()
