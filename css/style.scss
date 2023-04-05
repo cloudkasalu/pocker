@@ -6,7 +6,7 @@
 
 :root{
     --green:#005c2e;
-    --dark:#000;
+    --dark:#171717;
     --white:#fff;
 }
 
@@ -119,7 +119,8 @@ img{
     color: #000;
     top: 1rem;
     right: 1rem;
-    width: 30%;
+    // width: 30%;
+    max-width: max-content;
     height: 5%;
     border-radius: 30px;
     padding: 1rem;
@@ -143,8 +144,8 @@ img{
     position: absolute;
     right: 1rem;
     bottom: 1rem;
-    height: 20%;
-    width: 10%;
+    // height: 20%;
+    width: 15%;
 }
 
 
@@ -179,25 +180,30 @@ img{
 }
 
 .main-stack{
-    position: relative;
     width: 40%;
-    height: 35vh;
+}
+
+.main-stack-cards{
+    position: relative;
+    width: 100%;
     img{
-        position: absolute;
-        top: 0;
-        right:4rem;
+        height: 30vh;
+        
+        // right:4rem;
         
 
-        &:nth-of-type(2){
-            right: 6rem;
-        }
-        &:nth-of-type(3){
-            right: 8rem;
-        }
+        // &:nth-of-type(2){
+        //     right: 6rem;
+        // }
+        // &:nth-of-type(3){
+        //     right: 8rem;
+        // }
     }
 }
 
 .discard-board{
+    width: 100%;
+    height: 50vh;
     display: flex;
     justify-content: center;
 }
@@ -216,7 +222,7 @@ img{
         grid-gap: 1rem;
 
         .card{
-            width:88.33%;
+            width:100%;
             img{
                 width:100%;
             }
@@ -226,15 +232,13 @@ img{
 
 .player-discard{
     width: 100%;
-    height: 80%;
-    border: 2px solid rgba(192, 192, 192, 0.281);
-    height: 200px;
     border-radius: 8px;
-    width: 140px;
     position: relative;
     display: flex;
-
+    justify-content: center;
+    align-items: center;
     img{
-        position: absolute;
+        margin-left: 1rem;
+        height: calc(50vh - 25vh);
     }
 }

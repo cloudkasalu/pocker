@@ -9,7 +9,7 @@ var main_stack = []
 var player_stack = []
 var discard_stack = []
 
-const mainStackCard = document.querySelector('.main-stack-card');
+const mainStackCard = document.querySelector('.main-stack-cards');
 const playerStack = document.querySelector('.player-stack');
 const discardStack = document.querySelector('.player-discard')
 
@@ -66,9 +66,9 @@ window.addEventListener("load", (event) => {
   displayDiscardStack = ()=>{
 
     console.log('working' + discard_stack)
-    discardStack.innerHTML = discard_stack.map((card)=>{
+    discardStack.innerHTML = discard_stack.slice(0,3).map((card)=>{
       return `<img src="${card.src}" alt="${card.name}" id="${card.name}"  draggable="true" class="card pocker-card" >`
-    })
+    }).join('')
   }
 
   mainStackCard.addEventListener('click', ()=>{
