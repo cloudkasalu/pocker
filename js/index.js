@@ -28,6 +28,12 @@ const getData = async () => {
 getData();
 
 const lockSreen = ()=>{
+  
+  const container = document.querySelector("#gameBoard");
+  container.requestFullscreen().catch((error) => {
+    console.log( `${error}\n`);
+  });
+
   const oppositeOrientation = screen.orientation.type.startsWith("portrait")
   ? "landscape"
   : "portrait";
