@@ -27,23 +27,20 @@ const getData = async () => {
 }
 getData();
 
-const lockScreen = ()=>{
-  const oppositeOrientation = screen.orientation.type.startsWith("portrait")
-  ? "landscape"
-  : "portrait";
-screen.orientation
-  .lock(oppositeOrientation)
-  .then(() => {
-    log.textContent = `Locked to ${oppositeOrientation}\n`;
-  })
-  .catch((error) => {
-    log.textContent += `${error}\n`;
-  });
-}
-
-lockScreen()
 
 window.addEventListener("load", (event) => {
+
+      const oppositeOrientation = screen.orientation.type.startsWith("portrait")
+      ? "landscape"
+      : "portrait";
+      screen.orientation
+      .lock(oppositeOrientation)
+      .then(() => {
+        console.log(`Locked to ${oppositeOrientation}\n`);
+      })
+      .catch((error) => {
+        console.log(`${error}\n`) ;
+      });
 
     for(var i = 0; i < 3; i++ ){
         let randNum = Math.floor(Math.random()*main_stack.length);
