@@ -1,23 +1,26 @@
-const lockSreen = ()=>{
+const fullScreen = () =>{
     const container = document.querySelector("#gameBoard");
     container.requestFullscreen().catch((error) => {
       console.log( `${error}\n`);
     });
-    
-    const oppositeOrientation = screen.orientation.type.startsWith("portrait")
-    ? "landscape"
-    : "portrait";
-    screen.orientation
-    .lock(oppositeOrientation)
-    .then(() => {
-      console.log(`Locked to ${oppositeOrientation}\n`);
-    })
-    .catch((error) => {
-      console.log(`${error}\n`) ;
-    });
-  }
-  
-  lockSreen()
+}
+
+const lockSreen = ()=>{
+  const oppositeOrientation = screen.orientation.type.startsWith("portrait")
+  ? "landscape"
+  : "portrait";
+  screen.orientation
+  .lock(oppositeOrientation)
+  .then(() => {
+    console.log(`Locked to ${oppositeOrientation}\n`);
+  })
+  .catch((error) => {
+    console.log(`${error}\n`) ;
+  });
+}
+
+fullScreen()
+lockSreen()
 
 const log = document.getElementById("log");
 

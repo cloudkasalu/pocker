@@ -1,10 +1,5 @@
 // Screen Orientaion
 
-
-
-
-
-
 var main_stack = []
 var player_stack = []
 var discard_stack = []
@@ -27,28 +22,36 @@ const getData = async () => {
 }
 getData();
 
-const lockSreen = ()=>{
-  
-  const container = document.querySelector("#gameBoard");
-  container.requestFullscreen().catch((error) => {
-    console.log( `${error}\n`);
-  });
-
-  const oppositeOrientation = screen.orientation.type.startsWith("portrait")
-  ? "landscape"
-  : "portrait";
-  screen.orientation
-  .lock(oppositeOrientation)
-  .then(() => {
-    console.log(`Locked to ${oppositeOrientation}\n`);
-  })
-  .catch((error) => {
-    console.log(`${error}\n`) ;
-  });
+const fullScreen = () =>{
+  const mobile = window.matchMedia("min-width: 786px");
+  if(mobile){
+      const container = document.querySelector("#gameBoard");
+      container.requestFullscreen().catch((error) => {
+        console.log( `${error}\n`);
+      });
+      lockSreen()
+      console.log("right q")
+  }
+ document.querySelector('.waiting-board').classList.add("hidden")
 }
 
-lockSreen()
+const lockSreen = ()=>{
+const oppositeOrientation = screen.orientation.type.startsWith("portrait")
+? "landscape"
+: "portrait";
+screen.orientation
+.lock(oppositeOrientation)
+.then(() => {
+  console.log(`Locked to ${oppositeOrientation}\n`);
+})
+.catch((error) => {
+  console.log(`${error}\n`) ;
+});
+}
 
+const playgame = document.querySelector('#playgame');
+
+playgame.addEventListener('click', fullScreen)
 
 window.addEventListener("load", (event) => {
 
