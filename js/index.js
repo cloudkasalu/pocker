@@ -23,8 +23,10 @@ const getData = async () => {
 getData();
 
 const fullScreen = () =>{
-  const mobile = window.matchMedia("min-width: 786px");
-  if(mobile){
+
+  const mobile = window.matchMedia("(max-width: 786px)");
+  console.log(mobile.matches)
+  if(mobile.matches){
       const container = document.querySelector("#gameBoard");
       container.requestFullscreen().catch((error) => {
         console.log( `${error}\n`);
@@ -32,10 +34,11 @@ const fullScreen = () =>{
       lockSreen()
       console.log("right q")
   }
- document.querySelector('.waiting-board').classList.add("hidden")
+ document.querySelector('.waiting-board').classList.add("hidden");
 }
 
 const lockSreen = ()=>{
+
 const oppositeOrientation = screen.orientation.type.startsWith("portrait")
 ? "landscape"
 : "portrait";
@@ -47,6 +50,7 @@ screen.orientation
 .catch((error) => {
   console.log(`${error}\n`) ;
 });
+
 }
 
 const playgame = document.querySelector('#playgame');
@@ -132,7 +136,6 @@ function select(card){
       carddrop.play();
       return;
     }
-  
     // Deselect the current button (if any)
     if (currentCard) {
       currentCard.classList.remove("selected-card");
@@ -148,37 +151,111 @@ function select(card){
 
 
 function checkArray(arr) {
-  let identicalNumbers = false;
-  let adjacentNumbers = false;
-  
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i].number) {
-      // Check for identical numbers
-      for(let j = i + 1; j < arr.length; j++) {
-        if(arr[i].number === arr[j].number) {
-          identicalNumbers = true;
-          break;
-        }
+  let hasIdenticalNumbers = false;
+  let hasAdjacentNumbers = false;
+  let identicalPairs = [];
+  let adjacentPairs = [];
+  let pairs = {};
+
+  // Find identical pairs
+  for (let i = 0; i < arr.length; i++) {
+    if (pairs[arr[i].number] === 1) {
+      pairs[arr[i].number]++;
+      if (Object.values(pairs).filter(pair => pair === 2).length === 2) {
+        crush();
+        return false;
+      } else if (pairs[arr[i].number] === 2) {
+        identicalPairs.push(arr[i].number);
       }
-      
-      // Check for adjacent numbers
-      for(let j = i + 1; j < arr.length; j++) {
-        if(arr[i].number + 1 === arr[j].number && arr[i].number !== arr[j].number) {
-          adjacentNumbers = true;
-          break;
-        }
-      }
-    }
-    
-    // If both conditions are true, break out of the loop and return true
-    if(identicalNumbers && adjacentNumbers) {
-      return true;
+    } else {
+      pairs[arr[i].number] = 1;
     }
   }
-  
-  // If the loop completes without finding both conditions, return false
+
+  // Find adjacent pairs
+  for (let i = 0; i < arr.length; i++) {
+    const currentItem = arr[i];
+    const currentItemNumber = currentItem.number;
+
+    for (let j = i + 1; j < arr.length; j++) {
+      const otherItem = arr[j];
+      const otherItemNumber = otherItem.number;
+
+      if (currentItemNumber === otherItemNumber - 1 || currentItemNumber === otherItemNumber + 1) {
+        adjacentPairs.push([currentItemNumber, otherItemNumber]);
+      }
+    }
+  }
+
+
+  // Check if we found identical and adjacent pairs
+  for (let i = 0; i < arr.length; i++) {
+    const currentItem = arr[i];
+    const currentItemNumber = currentItem.number;
+
+    // Check for identical numbers
+    for (let j = i + 1; j < arr.length; j++) {
+    const otherItem = arr[j];
+    const otherItemNumber = otherItem.number;
+
+    if (currentItemNumber === otherItemNumber) {
+        hasIdenticalNumbers = true;
+        break;
+    }
+    }
+
+    if (identicalPairs.indexOf(currentItemNumber) === -1 && adjacentPairs.filter(pair => pair.indexOf(currentItemNumber) !== -1).length === 0) {
+      // We found an item that is not part of identical or adjacent pairs, so return false
+      return false;
+    }else{
+        hasAdjacentNumbers = true;
+    }
+  }
+
+  if (hasIdenticalNumbers && hasAdjacentNumbers) {
+       // We found both conditions, so we can stop looping
+
+       console.log(identicalPairs[0])
+       console.log(adjacentPairs)
+       const identicalNumber = identicalPairs[0]
+       const adjacentNumbers = []
+
+       for(let i = 0; i < adjacentPairs.length; i++){
+        let currentArray = adjacentPairs[i]
+        
+        currentArray.forEach(item =>{
+            if(item !== identicalNumber){
+                adjacentNumbers.push(item)
+                console.log(adjacentNumbers)
+            }
+        })
+       }
+
+
+       let uniqueNums = [...new Set(adjacentNumbers)].slice(0,2);
+       console.log(uniqueNums)
+       if(((identicalNumber + 1 === uniqueNums[0] || identicalNumber - 1 === uniqueNums[0] ) &&  (identicalNumber + 1 === uniqueNums[1] || identicalNumber - 1 === uniqueNums[1] ))){
+        return false;
+       }else if(((identicalNumber + 1 === uniqueNums[0] || identicalNumber - 1 === uniqueNums[0] ) ||  (identicalNumber + 1 === uniqueNums[1] || identicalNumber - 1 === uniqueNums[1] ))){
+        return true;
+       }
+       // (identicalNumber + 1 === adjacentNumber &&  indenticalNumber - 1 === adjacentNumber)  return false
+       // (identicalNumber + 1 === ajacentNumber || indenticalNumber - 1 === adjacentNumber ) return true
+       return true;
+     }
+
   return false;
 }
+
+
+function crush(pairs) {
+  console.log("Crash!");
+  console.log(pairs)
+  // Handle the crash however you want
+
+}
+
+ 
  
 
 

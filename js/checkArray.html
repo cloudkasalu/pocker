@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+function checkArray(arr) {
+  let hasIdenticalNumbers = false;
+  let hasAdjacentNumbers = false;
+  let identicalPairs = [];
+  let adjacentPairs = [];
+  let pairs = {};
+
+  // Find identical pairs
+  for (let i = 0; i < arr.length; i++) {
+    if (pairs[arr[i].number] === 1) {
+      pairs[arr[i].number]++;
+      if (Object.values(pairs).filter(pair => pair === 2).length === 2) {
+        crash();
+        return false;
+      } else if (pairs[arr[i].number] === 2) {
+        identicalPairs.push(arr[i].number);
+      }
+    } else {
+      pairs[arr[i].number] = 1;
+    }
+  }
+
+  // Find adjacent pairs
+  for (let i = 0; i < arr.length; i++) {
+    const currentItem = arr[i];
+    const currentItemNumber = currentItem.number;
+
+    for (let j = i + 1; j < arr.length; j++) {
+      const otherItem = arr[j];
+      const otherItemNumber = otherItem.number;
+
+      if (currentItemNumber === otherItemNumber - 1 || currentItemNumber === otherItemNumber + 1) {
+        adjacentPairs.push([currentItemNumber, otherItemNumber]);
+      }
+    }
+  }
+
+
+  // Check if we found identical and adjacent pairs
+  for (let i = 0; i < arr.length; i++) {
+    const currentItem = arr[i];
+    const currentItemNumber = currentItem.number;
+
+    // Check for identical numbers
+    for (let j = i + 1; j < arr.length; j++) {
+    const otherItem = arr[j];
+    const otherItemNumber = otherItem.number;
+
+    if (currentItemNumber === otherItemNumber) {
+        hasIdenticalNumbers = true;
+        break;
+    }
+    }
+
+    if (identicalPairs.indexOf(currentItemNumber) === -1 && adjacentPairs.filter(pair => pair.indexOf(currentItemNumber) !== -1).length === 0) {
+      // We found an item that is not part of identical or adjacent pairs, so return false
+      return false;
+    }else{
+        hasAdjacentNumbers = true;
+    }
+  }
+
+  if (hasIdenticalNumbers && hasAdjacentNumbers) {
+       // We found both conditions, so we can stop looping
+
+       console.log(identicalPairs[0])
+       console.log(adjacentPairs)
+       const identicalNumber = identicalPairs[0]
+       const adjacentNumbers = []
+
+       for(let i = 0; i < adjacentPairs.length; i++){
+        let currentArray = adjacentPairs[i]
+        
+        currentArray.forEach(item =>{
+            if(item !== identicalNumber){
+                adjacentNumbers.push(item)
+                console.log(adjacentNumbers)
+            }
+        })
+       }
+
+
+       let uniqueNums = [...new Set(adjacentNumbers)].slice(0,2);
+       console.log(uniqueNums)
+       if(((identicalNumber + 1 === uniqueNums[0] || identicalNumber - 1 === uniqueNums[0] ) &&  (identicalNumber + 1 === uniqueNums[1] || identicalNumber - 1 === uniqueNums[1] ))){
+        return false;
+       }else if(((identicalNumber + 1 === uniqueNums[0] || identicalNumber - 1 === uniqueNums[0] ) ||  (identicalNumber + 1 === uniqueNums[1] || identicalNumber - 1 === uniqueNums[1] ))){
+        return true;
+       }
+       // (identicalNumber + 1 === adjacentNumber &&  indenticalNumber - 1 === adjacentNumber)  return false
+       // (identicalNumber + 1 === ajacentNumber || indenticalNumber - 1 === adjacentNumber ) return true
+       return true;
+     }
+
+  return false;
+}
+
+
+
+
+function crash(pairs) {
+  console.log("Crash!");
+  // Handle the crash however you want
+}
+
+
+// should return false, no identical pairs
+console.log("1" + checkArray([{number: 9}, {number: 9}, {number: 7}, {number:8}]));
+
+// should return false, no adjacent pairs
+// console.log("2" +checkArray([{number: 1}, {number: 1}, {number: 2}, {number: 2}]));
+
+// // should return false, more than one identical pair
+// console.log("3" +checkArray([{number: 1}, {number: 1}, {number: 2}, {number: 2}]));
+
+// // should return false, more than one adjacent pair
+// console.log("4" +checkArray([{number: 1}, {number: 2}, {number: 3}, {number: 4}]));
+
+// // should return true
+// console.log("5" + checkArray([{number: 1}, {number: 1}, {number: 2}, {number: 3}]));
+
+// // should return true
+// console.log("6" +checkArray([{number: 4}, {number: 4}, {number: 4}, {number: 5}]));
+
+// // should return true
+// console.log("7" +checkArray([{number: 1}, {number: 1}, {number: 1}, {number: 2}]));
+
+// // should return true
+// console.log("8" +checkArray([{number: 1}, {number: 2}, {number: 2}, {number: 3}]));
+
+// // should return true
+// console.log("9" +checkArray([{number: 1}, {number: 3}, {number: 3}, {number: 3}]));
+
+// // should return true
+// console.log("10" + checkArray([{number: 2}, {number: 2}, {number: 2}, {number: 3}]));
+
+    </script>
+</body>
+</html>
