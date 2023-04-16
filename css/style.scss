@@ -18,6 +18,8 @@ body{
     // min-width: 768px;
 }
 
+
+
 .image-container{
     width: 100%;
     height: 100%;
@@ -58,7 +60,6 @@ img{
     border: none;
     outline: none;
     padding: .8rem  1.5rem;
-    min-width: 150px;
     border-radius: 8px;
     font-size: 16px
 
@@ -347,6 +348,10 @@ input{
         form{
             padding: 2rem;
             // max-width: 370px;
+
+            button{
+                min-width: 150px;
+            }
             .form-header{
                 margin-bottom: 3rem;
             }
@@ -491,7 +496,7 @@ input{
                     background-color: var(--light-grey);
                 }
             }
-            .btn{
+            .btn {
                 text-align: center;
                 text-decoration: none;
                 color: #000;
@@ -502,5 +507,145 @@ input{
                 padding: 1rem;
             }
         }
+    }
+}
+
+
+.profile-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    #menu{
+        padding: 1rem;
+        border-radius: 10px;
+        width: 40vw;
+        height: 100%;
+        background-color: white;
+        min-height: 50vh;
+        @media (max-width:786px) {
+            display: none;
+        }
+    }
+    #main-content{
+        width: 100%;
+        margin-left: 5rem;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        .create-game{
+            width: 20vw;
+            height: 30vh;
+            background-color: var(--dark);
+            border-radius: 10px;
+            color: white;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+        .active-players-grid{
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            max-width: 400px;
+            width: 100%;
+            display: grid;
+            .active-player{
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .user{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .user-image{
+                        width: 50px;
+                        height: 50px;
+                        margin-right: 1rem;
+
+                        img{
+                            border-radius: 100%;
+                        }
+                    }
+                }
+                button{
+                    min-width: unset;
+                    padding: 0.5rem 1.5rem;
+                    height: 40px;
+                
+                }
+            }
+
+        }
+    }
+}
+
+
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    .modal-cover{
+        background-color: #0000002c;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .modal-content{
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+        max-height: 35vh;
+        background-color: var(--white);
+        padding: 1rem;
+        position: absolute;
+        border-radius: 10px;
+
+        .modal-container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+            h1{
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+
+#challengeModal{
+    .buttons{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        align-items: center;
     }
 }

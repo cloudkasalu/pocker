@@ -4,67 +4,108 @@
        {
            "name": "flower_one",
            "number": 1,
-           "src": "../Exports/1x/flower_one.png"
+           "image":{
+            "src": "../Exports/1x/flower_one.png",
+            "alt": "pocker image flower one"
+           }
+           
        },
        {
            "name": "flower_two",
            "number": 2,
-           "src": "../Exports/1x/flower_two.png"
+           "image":{
+            "src": "../Exports/1x/flower_two.png",
+            "alt": "pocker image flower two"
+           }
+           
        },
        {
            "name": "flower_three",
            "number": 3,
-           "src": "../Exports/1x/flower_three.png"
+           "image":{
+            "src": "../Exports/1x/flower_three.png",
+            "alt": "pocker image flower three"
+           }
        },
        {
            "name": "flower_four",
            "number": 4,
-           "src": "../Exports/1x/flower_four.png"
+           "image":{
+            "src": "../Exports/1x/flower_four.png",
+            "alt": "pocker image flower four"
+           }
        },
        {
            "name": "flower_five",
            "number": 5,
-           "src": "../Exports/1x/flower_five.png"
+           "image":{
+            "src": "../Exports/1x/flower_five.png",
+            "alt": "pocker image flower five"
+           }
        },
        {
            "name": "flower_six",
            "number": 6,
-           "src": "../Exports/1x/flower_six.png"
+           "image":{
+            "src": "../Exports/1x/flower_six.png",
+            "alt": "pocker image flower six"
+           }
        },
        {
            "name": "flower_seven",
            "number": 7,
-           "src": "../Exports/1x/flower_seven.png"
+           "image":{
+            "src": "../Exports/1x/flower_seven.png",
+            "alt": "pocker image flower seven"
+           }
        },
        {
            "name": "flower_eight",
            "number": 8,
-           "src": "../Exports/1x/flower_eight.png"
+           "image":{
+            "src": "../Exports/1x/flower_eight.png",
+            "alt": "pocker image flower eight"
+           }
        },
        {
            "name": "flower_nine",
            "number": 9,
-           "src": "../Exports/1x/flower_nine.png"
+           "image":{
+            "src": "../Exports/1x/flower_nine.png",
+            "alt": "pocker image flower nine"
+           }
        },
        {
            "name": "flower_ten",
            "number": 10,
-           "src": "../Exports/1x/flower_ten.png"
+           "image":{
+            "src": "../Exports/1x/flower_ten.png",
+            "alt": "pocker image flower ten"
+           }
        },
        {
            "name": "flower_j",
            "number": 11,
-           "src": "../Exports/1x/flower_j.png"
+           "image":{
+            "src": "../Exports/1x/flower_j.png",
+            "alt": "pocker image flower j"
+           }
        },
        {
            "name": "flower_q",
            "number": 12,
-           "src": "../Exports/1x/flower_q.png"
+           "image":{
+            "src": "../Exports/1x/flower_q.png",
+            "alt": "pocker image flower q"
+           }
        },
        {
            "name": "flower_k",
            "number": 13,
-           "src": "../Exports/1x/flower_k.png"
+           "image":{
+            "src": "../Exports/1x/flower_k.png",
+            "alt": "pocker image flower k"
+           }
        },
 
 
@@ -72,200 +113,321 @@
        {
            "name": "love_one",
            "number": 1,
-           "src": "../Exports/1x/love_one.png"
+           "image":{
+            "src": "../Exports/1x/love_one.png",
+            "alt": "pocker image love one"
+           }
        },
        {
            "name": "love_two",
            "number": 2,
-           "src": "../Exports/1x/love_two.png"
+           "image":{
+            "src": "../Exports/1x/love_two.png",
+            "alt": "pocker image love two"
+           }
        },
        {
            "name": "love_three",
            "number": 3,
-           "src": "../Exports/1x/love_three.png"
+           "image":{
+            "src": "../Exports/1x/love_three.png",
+            "alt": "pocker image love three"
+           }
        },
        {
            "name": "love_four",
            "number": 4,
-           "src": "../Exports/1x/love_four.png"
+           "image":{
+            "src": "../Exports/1x/love_four.png",
+            "alt": "pocker image love four"
+           }
        },
        {
            "name": "love_five",
            "number": 5,
-           "src": "../Exports/1x/love_five.png"
+           "image":{
+            "src": "../Exports/1x/love_five.png",
+            "alt": "pocker image love five"
+           }
        },
        {
            "name": "love_six",
            "number": 6,
-           "src": "../Exports/1x/love_six.png"
+           "image":{
+            "src": "../Exports/1x/love_six.png",
+            "alt": "pocker image love six"
+           }
        },
        {
            "name": "love_seven",
            "number": 7,
-           "src": "../Exports/1x/love_seven.png"
+           "image":{
+            "src": "../Exports/1x/love_seven.png",
+            "alt": "pocker image love seven"
+           }
        },
        {
            "name": "love_eight",
            "number": 8,
-           "src": "../Exports/1x/love_eight.png"
+           "image":{
+            "src": "../Exports/1x/love_eight.png",
+            "alt": "pocker image love eight"
+           }
        },
        {
            "name": "love_nine",
            "number": 9,
-           "src": "../Exports/1x/love_nine.png"
+           "image":{
+            "src": "../Exports/1x/love_nine.png",
+            "alt": "pocker image love nine"
+           }
        },
        {
            "name": "love_ten",
            "number": 10,
-           "src": "../Exports/1x/love_ten.png"
+           "image":{
+            "src": "../Exports/1x/love_ten.png",
+            "alt": "pocker image love ten"
+           }
        },
        {
            "name": "love_j",
            "number": 11,
-           "src": "../Exports/1x/love_j.png"
+           "image":{
+            "src": "../Exports/1x/love_j.png",
+            "alt": "pocker image love j"
+           }
        },
        {
            "name": "love_q",
            "number": 12,
-           "src": "../Exports/1x/love_q.png"
+           "image":{
+            "src": "../Exports/1x/love_q.png",
+            "alt": "pocker image love q"
+           }
        },
        {
            "name": "love_k",
            "number": 13,
-           "src": "../Exports/1x/love_k.png"
+           "image":{
+            "src": "../Exports/1x/love_k.png",
+            "alt": "pocker image love k"
+           }
        },
 
 
        {
            "name": "spade_one",
            "number": 1,
-           "src": "../Exports/1x/spade_one.png"
+           "image":{
+            "src": "../Exports/1x/spade_one.png",
+            "alt": "pocker image spade one"
+           }
        },
        {
            "name": "spade_two",
            "number": 2,
-           "src": "../Exports/1x/spade_two.png"
+           "image":{
+            "src": "../Exports/1x/spade_one.png",
+            "alt": "pocker image spade two"
+           }
        },
        {
            "name": "spade_three",
            "number": 3,
-           "src": "../Exports/1x/spade_three.png"
+           "image":{
+            "src": "../Exports/1x/spade_three.png",
+            "alt": "pocker image spade three"
+           }
        },
        {
            "name": "spade_four",
            "number": 4,
-           "src": "../Exports/1x/spade_four.png"
+           "image":{
+            "src": "../Exports/1x/spade_four.png",
+            "alt": "pocker image spade four"
+           }
        },
        {
            "name": "spade_five",
            "number": 5,
-           "src": "../Exports/1x/spade_five.png"
+           "image":{
+            "src": "../Exports/1x/spade_five.png",
+            "alt": "pocker image spade five"
+           }
        },
        {
            "name": "spade_six",
            "number": 6,
-           "src": "../Exports/1x/spade_six.png"
+           "image":{
+            "src": "../Exports/1x/spade_six.png",
+            "alt": "pocker image spade six"
+           }
        },
        {
            "name": "spade_seven",
            "number": 7,
-           "src": "../Exports/1x/spade_seven.png"
+           "image":{
+            "src": "../Exports/1x/spade_seven.png",
+            "alt": "pocker image spade seven"
+           }
        },
        {
            "name": "spade_eight",
            "number": 8,
-           "src": "../Exports/1x/spade_eight.png"
+           "image":{
+            "src": "../Exports/1x/spade_eight.png",
+            "alt": "pocker image spade eight"
+           }
        },
        {
            "name": "spade_nine",
            "number": 9, 
-           "src": "../Exports/1x/spade_nine.png"
+           "image":{
+            "src": "../Exports/1x/spade_nine.png",
+            "alt": "pocker image spade nine"
+           }
        },
        {
            "name": "spade_ten",
            "number": 10,
-           "src": "../Exports/1x/spade_ten.png"
+           "image":{
+            "src": "../Exports/1x/spade_ten.png",
+            "alt": "pocker image spade ten"
+           }
        },
        {
            "name": "spade_j",
            "number": 11,
-           "src": "../Exports/1x/spade_j.png"
+           "image":{
+            "src": "../Exports/1x/spade_j.png",
+            "alt": "pocker image spade j"
+           }
        },
        {
            "name": "spade_q",
            "number": 12,
-           "src": "../Exports/1x/spade_q.png"
+           "image":{
+            "src": "../Exports/1x/spade_q.png",
+            "alt": "pocker image spade q"
+           }
        },
        {
            "name": "spade_k",
            "number": 13,
-           "src": "../Exports/1x/spade_k.png"
+           "image":{
+            "src": "../Exports/1x/spade_k.png",
+            "alt": "pocker image spade k"
+           }
        },
 
        {
            "name": "diamond_one",
            "number": 1,
-           "src": "../Exports/1x/diamond_one.png"
+           "image":{
+            "src": "../Exports/1x/diamond_one.png",
+            "alt": "pocker image diamond one"
+           }
        },
        {
            "name": "diamond_two",
            "number": 2,
-           "src": "../Exports/1x/diamond_two.png"
+           "image":{
+            "src": "../Exports/1x/diamond_two.png",
+            "alt": "pocker image diamond two"
+           }
        },
+       
        {
            "name": "diamond_three",
            "number": 3,
-           "src": "../Exports/1x/diamond_three.png"
+           "image":{
+            "src": "../Exports/1x/diamond_three.png",
+            "alt": "pocker image diamond three"
+           }
        },
+       
        {
            "name": "diamond_four",
            "number": 4,
-           "src": "../Exports/1x/diamond_four.png"
+           "image":{
+            "src": "../Exports/1x/diamond_four.png",
+            "alt": "pocker image diamond four"
+           }
        },
+       
        {
            "name": "diamond_five",
            "number": 5,
-           "src": "../Exports/1x/diamond_five.png"
+           "image":{
+            "src": "../Exports/1x/diamond_five.png",
+            "alt": "pocker image diamond five"
+           }
+           
        },
        {
            "name": "diamond_six",
            "number": 6,
-           "src": "../Exports/1x/diamond_six.png"
+           "image":{
+            "src": "../Exports/1x/diamond_six.png",
+            "alt": "pocker image diamond six"
+           }
        },
        {
            "name": "diamond_seven",
            "number": 7,
-           "src": "../Exports/1x/diamond_seven.png"
+           "image":{
+            "src": "../Exports/1x/diamond_seven.png",
+            "alt": "pocker image diamond seven"
+           }
        },
        {
            "name": "diamond_eight",
            "number": 8,
-           "src": "../Exports/1x/diamond_eight.png"
+           "image":{
+            "src": "../Exports/1x/diamond_eight.png",
+            "alt": "pocker image diamond eight"
+           }
        },
        {
            "name": "diamond_nine",
            "number": 9,
-           "src": "../Exports/1x/diamond_nine.png"
+           "image":{
+            "src": "../Exports/1x/diamond_nine.png",
+            "alt": "pocker image diamond nine"
+           }
        },
        {
            "name": "diamond_ten",
            "number": 10,
-           "src": "../Exports/1x/diamond_ten.png"
+           "image":{
+            "src": "../Exports/1x/diamond_ten.png",
+            "alt": "pocker image diamond ten"
+           }
        },
        {
            "name": "diamond_j",
            "number": 11,
-           "src": "../Exports/1x/diamond_j.png"
+           "image":{
+            "src": "../Exports/1x/diamond_j.png",
+            "alt": "pocker image diamond j"
+           }
        },
        {
            "name": "diamond_q",
            "number": 12,
-           "src": "../Exports/1x/diamond_q.png"
+           "image":{
+            "src": "../Exports/1x/diamond_q.png",
+            "alt": "pocker image diamond q"
+           }
        },
        {
            "name": "diamond_k",
            "number": 13,
-           "src": "../Exports/1x/diamond_k.png"
+           "image":{
+            "src": "../Exports/1x/diamond_k.png",
+            "alt": "pocker image diamond k"
+           }
        }
    ]
 }

@@ -55,7 +55,6 @@ img {
   border: none;
   outline: none;
   padding: 0.8rem 1.5rem;
-  min-width: 150px;
   border-radius: 8px;
   font-size: 16px;
 }
@@ -313,6 +312,9 @@ input {
 #authPage .auth-page-form form {
   padding: 2rem;
 }
+#authPage .auth-page-form form button {
+  min-width: 150px;
+}
 #authPage .auth-page-form form .form-header {
   margin-bottom: 3rem;
 }
@@ -448,4 +450,134 @@ input {
   height: 45px;
   background-color: var(--light-grey);
   padding: 1rem;
+}
+
+.profile-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.profile-main #menu {
+  padding: 1rem;
+  border-radius: 10px;
+  width: 40vw;
+  height: 100%;
+  background-color: white;
+  min-height: 50vh;
+}
+@media (max-width: 786px) {
+  .profile-main #menu {
+    display: none;
+  }
+}
+.profile-main #main-content {
+  width: 100%;
+  margin-left: 5rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.profile-main #main-content .create-game {
+  width: 20vw;
+  height: 30vh;
+  background-color: var(--dark);
+  border-radius: 10px;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-main #main-content .create-game a {
+  text-decoration: none;
+  color: white;
+}
+.profile-main #main-content .active-players-grid {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 400px;
+  width: 100%;
+  display: grid;
+}
+.profile-main #main-content .active-players-grid .active-player {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-main #main-content .active-players-grid .active-player .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-main #main-content .active-players-grid .active-player .user .user-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+.profile-main #main-content .active-players-grid .active-player .user .user-image img {
+  border-radius: 100%;
+}
+.profile-main #main-content .active-players-grid .active-player button {
+  min-width: unset;
+  padding: 0.5rem 1.5rem;
+  height: 40px;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modal .modal-cover {
+  background-color: rgba(0, 0, 0, 0.1725490196);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal .modal-content {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 35vh;
+  background-color: var(--white);
+  padding: 1rem;
+  position: absolute;
+  border-radius: 10px;
+}
+.modal .modal-content .modal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content .modal-container h1 {
+  font-size: 32px;
+}
+
+#challengeModal .buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

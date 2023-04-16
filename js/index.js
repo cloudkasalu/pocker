@@ -7,6 +7,15 @@ var discard_stack = []
 const mainStackCard = document.querySelector('.main-stack-cards');
 const playerStack = document.querySelector('.player-stack');
 const discardStack = document.querySelector('.player-discard')
+const winModal = document.querySelector('#winModal')
+const challengeModal = document.querySelector('#challengeModal')
+const modalClose = document.querySelector('.modal-cover');
+
+
+modalClose.addEventListener('click', (e)=>{
+  const id = e.target.parentElement.id;
+  document.querySelector("#"+id).style.display = 'none';
+})
 
 const carddrop = new Audio('./media/carddrop.mp3');
 const shuffling = new Audio('./media/shuffling-cards.mp3');
@@ -23,7 +32,6 @@ const getData = async () => {
 getData();
 
 const fullScreen = () =>{
-
   const mobile = window.matchMedia("(max-width: 786px)");
   console.log(mobile.matches)
   if(mobile.matches){
@@ -38,7 +46,6 @@ const fullScreen = () =>{
 }
 
 const lockSreen = ()=>{
-
 const oppositeOrientation = screen.orientation.type.startsWith("portrait")
 ? "landscape"
 : "portrait";
@@ -54,11 +61,9 @@ screen.orientation
 }
 
 const playgame = document.querySelector('#playgame');
-
 playgame.addEventListener('click', fullScreen)
 
 window.addEventListener("load", (event) => {
-
     for(var i = 0; i < 3; i++ ){
         let randNum = Math.floor(Math.random()*main_stack.length);
         let randCard = main_stack.filter(card => card.name === main_stack[randNum].name);
@@ -71,18 +76,14 @@ window.addEventListener("load", (event) => {
       //   console.log("main")
       //   console.log(main_stack)
     }
-
-
-
     displayPlayerStack()
-    // shuffling.play()
   });
-
+  
 
   displayPlayerStack = ()=>{
    playerStack.innerHTML = player_stack.map( (card) =>{
       return  `<div class="card-container card">
-               <img src="${card.src}" alt="${card.name}" id="${card.name}" onclick="select(this)" draggable="true" class="card pocker-card" >   
+               <img src="${card.image.src}" alt="${card.name}" id="${card.name}" onclick="select(this)" draggable="true" class="card pocker-card" >   
                </div>`
       
    }).join('');
@@ -92,7 +93,7 @@ window.addEventListener("load", (event) => {
 
     console.log('working' + discard_stack)
     discardStack.innerHTML = discard_stack.slice(0,3).map((card)=>{
-      return `<img src="${card.src}" alt="${card.name}" id="${card.name}"  draggable="true" class="card pocker-card" >`
+      return `<img src="${card.image.src}" alt="${card.name}" id="${card.name}"  draggable="true" class="card pocker-card" >`
     }).join('')
   }
 
@@ -114,7 +115,7 @@ window.addEventListener("load", (event) => {
 
    const hasWon = checkArray(player_stack)
    if( hasWon){
-     alert("You've Won!!! refresh the broswer.")
+    winModal.style.display = 'flex';
    }
 })
 
@@ -125,6 +126,8 @@ function select(card){
 
   if(player_stack.length === 4){
     if (card == currentCard) {
+
+      
       const id = card.id;
       const discarded_card = player_stack.filter(card => card.name === id)
       if(discarded_card !== 0){
@@ -239,8 +242,6 @@ function checkArray(arr) {
        }else if(((identicalNumber + 1 === uniqueNums[0] || identicalNumber - 1 === uniqueNums[0] ) ||  (identicalNumber + 1 === uniqueNums[1] || identicalNumber - 1 === uniqueNums[1] ))){
         return true;
        }
-       // (identicalNumber + 1 === adjacentNumber &&  indenticalNumber - 1 === adjacentNumber)  return false
-       // (identicalNumber + 1 === ajacentNumber || indenticalNumber - 1 === adjacentNumber ) return true
        return true;
      }
 
